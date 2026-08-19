@@ -922,13 +922,171 @@ body {
   color: #64748b;
 }
 
-/* Responsive adjustments */
-@media (max-width: 900px) {
-  .node-drawer {
-    width: 100vw;
+/* Comprehensive Mobile Responsiveness */
+@media (max-width: 768px) {
+  /* Navbar adjustments */
+  .navbar-single {
+    height: auto;
+    min-height: 48px;
+    padding: 0.4rem 0.75rem;
+    flex-wrap: wrap;
+    gap: 0.4rem;
   }
 
-  .doc-reader-view {
+  .brand-tagline {
+    display: none;
+  }
+
+  .brand-title {
+    font-size: 0.95rem;
+  }
+
+  .logo-icon-box {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+  }
+
+  .nav-tabs-single {
+    width: 100%;
+    justify-content: space-between;
+    overflow-x: auto;
+    padding: 2px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tab-btn {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.72rem;
+    flex: 1;
+    justify-content: center;
+    white-space: nowrap;
+  }
+
+  .main-content {
+    height: calc(100vh - 84px);
+  }
+
+  /* Single Toolbar adjustments */
+  .single-toolbar {
+    height: auto;
+    padding: 0.4rem 0.6rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.35rem;
+  }
+
+  .pipeline-selector-inline {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .pipeline-selector-inline::-webkit-scrollbar {
+    display: none;
+  }
+
+  .pipeline-btn {
+    padding: 0.22rem 0.5rem;
+    font-size: 0.7rem;
+    flex-shrink: 0;
+  }
+
+  .toolbar-right-controls {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0.35rem;
+  }
+
+  .tour-inline-group {
+    font-size: 0.7rem;
+    padding: 2px 4px;
+  }
+
+  .toggle-option {
+    padding: 2px 6px;
+    font-size: 0.68rem;
+  }
+
+  .ctrl-btn-slim {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Drawer adjustments */
+  .node-drawer {
+    width: 100vw;
+    max-width: 100vw;
+    height: 100vh;
+  }
+
+  .drawer-header {
     padding: 1rem;
+  }
+
+  .drawer-title {
+    font-size: 1.1rem;
+  }
+
+  .drawer-body {
+    padding: 1rem 0.85rem;
+    gap: 1rem;
+  }
+
+  .drawer-footer {
+    padding: 0.75rem 1rem;
+  }
+
+  /* Doc Reader adjustments */
+  .doc-reader-view {
+    padding: 1rem 0.75rem;
+    gap: 1rem;
+  }
+
+  .doc-header-card, 
+  .doc-page-section-card {
+    padding: 1rem 0.85rem;
+  }
+
+  .doc-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  /* Modules Matrix adjustments */
+  .modules-matrix-view {
+    padding: 1rem 0.75rem;
+  }
+
+  .modules-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .module-card {
+    padding: 1rem 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .flow-node-card {
+    padding: 0.75rem 0.9rem;
+    gap: 0.65rem;
+  }
+
+  .flow-node-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .flow-node-title {
+    font-size: 0.85rem !important;
+  }
+
+  .flow-node-subtitle {
+    font-size: 0.74rem;
   }
 }

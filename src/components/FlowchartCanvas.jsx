@@ -43,21 +43,28 @@ export default function FlowchartCanvas({
 
   // Guided Walkthrough / Tour State
   const [currentTourIndex, setCurrentTourIndex] = useState(0);
+  const touchStateRef = React.useRef({ startX: 0, startY: 0, panX: 0, panY: 0, initialDistance: null, initialZoom: 0.85 });
 
-  // Center horizontally at the start
+  // Center horizontally at the start (Responsive calculation for mobile)
   const centerInitialView = () => {
     if (!viewportRef.current) return;
     const vpW = viewportRef.current.clientWidth;
-    const targetX = vpW / 2 - (600 + CARD_WIDTH / 2) * 0.85;
-    setZoom(0.85);
-    setPan({ x: targetX, y: 30 });
+    const isMobile = vpW < 768;
+    const initialZoom = isMobile ? Math.min(Math.max((vpW - 32) / (CARD_WIDTH + 40), 0.52), 0.8) : 0.85;
+    const targetX = vpW / 2 - (600 + CARD_WIDTH / 2) * initialZoom;
+    setZoom(initialZoom);
+    setPan({ x: targetX, y: isMobile ? 15 : 30 });
   };
 
-  // Center on pipeline switch
+  // Center on pipeline switch or window resize
   useEffect(() => {
     if (viewMode === 'canvas') {
       const timer = setTimeout(centerInitialView, 100);
-      return () => clearTimeout(timer);
+      window.addEventListener('resize', centerInitialView);
+      return () => {
+        clearTimeout(timer);
+        window.removeEventListener('resize', centerInitialView);
+      };
     }
   }, [activePipeline, viewMode]);
 
@@ -120,6 +127,53 @@ export default function FlowchartCanvas({
     e.preventDefault();
     const zoomFactor = e.deltaY < 0 ? 1.08 : 0.92;
     setZoom((prev) => Math.min(Math.max(prev * zoomFactor, 0.4), 2.0));
+  };
+
+  // Mobile Touch Handlers (Single-finger drag & Multi-finger pinch zoom)
+  const handleTouchStart = (e) => {
+    if (e.target.closest('.flow-node-card') || e.target.closest('.single-toolbar')) return;
+    if (e.touches.length === 1) {
+      setIsDragging(true);
+      touchStateRef.current = {
+        startX: e.touches[0].clientX,
+        startY: e.touches[0].clientY,
+        panX: pan.x,
+        panY: pan.y,
+        initialDistance: null,
+        initialZoom: zoom
+      };
+    } else if (e.touches.length === 2) {
+      const dist = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY
+      );
+      touchStateRef.current.initialDistance = dist;
+      touchStateRef.current.initialZoom = zoom;
+    }
+  };
+
+  const handleTouchMove = (e) => {
+    if (e.touches.length === 1 && isDragging) {
+      const deltaX = e.touches[0].clientX - touchStateRef.current.startX;
+      const deltaY = e.touches[0].clientY - touchStateRef.current.startY;
+      setPan({
+        x: touchStateRef.current.panX + deltaX,
+        y: touchStateRef.current.panY + deltaY
+      });
+    } else if (e.touches.length === 2 && touchStateRef.current.initialDistance) {
+      const dist = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY
+      );
+      const factor = dist / touchStateRef.current.initialDistance;
+      const newZoom = Math.min(Math.max(touchStateRef.current.initialZoom * factor, 0.35), 2.0);
+      setZoom(newZoom);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+    touchStateRef.current.initialDistance = null;
   };
 
   const handleZoomIn = () => setZoom(prev => Math.min(prev * 1.15, 2.0));
@@ -339,6 +393,9 @@ export default function FlowchartCanvas({
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
           onWheel={handleWheel}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           <div
             className="canvas-transform-layer"
