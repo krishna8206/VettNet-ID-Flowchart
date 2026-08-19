@@ -1438,35 +1438,32 @@ export const VETTNET_DATA = {
     { id: 30, name: "Security & Privacy Management", category: "Security & Compliance", sec: "39, 40, 44", desc: "Platform-wide encryption (TLS 1.3, AES-256), session security, POPIA compliance, and account locking." }
   ],
 
-  // 6 Interactive Visual Pipelines with Spatially Optimized Coordinates
   flowcharts: {
     masterArchitecture: {
       id: "masterArchitecture",
       title: "Master High-Level Architecture Flowchart",
       subtitle: "14 Unified Global Pipeline Tiers connecting the entire VettNet Trust Ecosystem",
       nodes: [
-        { id: "m1", stepNum: "01", stage: "Stage 01", title: "Individual / Organization", subtitle: "Entity Onboarding & Digital Intake", secId: "sec-43", type: "start", x: 600, y: 40, icon: "Users" },
-        { id: "m2", stepNum: "02", stage: "Stage 02", title: "VettNet ID / VN Number", subtitle: "Unique Master Index Reference Key", secId: "sec-4", type: "process", x: 600, y: 160, icon: "Fingerprint" },
-        { id: "m3", stepNum: "03", stage: "Stage 03", title: "Identity Authentication", subtitle: "Level-1 Existence Verification", secId: "sec-19", type: "process", x: 600, y: 280, icon: "ShieldCheck" },
-        { id: "m4", stepNum: "04", stage: "Stage 04", title: "Consent & Purpose Layer", subtitle: "5-Point Gate & Attribute Scoping", secId: "sec-8", type: "gate", x: 600, y: 400, icon: "Lock" },
-        { id: "m5", stepNum: "05", stage: "Stage 05", title: "Profile Modules (15)", subtitle: "Modular Data Structures & Stores", secId: "sec-10", type: "subflow", x: 600, y: 520, icon: "Layers" },
-        { id: "m6", stepNum: "06", stage: "Stage 06", title: "Evidence Management", subtitle: "9-Field Provenance & Document Hashing", secId: "sec-11", type: "process", x: 600, y: 640, icon: "FileText" },
-        { id: "m7", stepNum: "07", stage: "Stage 07", title: "Gov & External API Gateway", subtitle: "Secure DMZ Connector Layer", secId: "sec-20", type: "gateway", x: 600, y: 760, icon: "Cpu" },
-        
-        // 4 Statutory Gateways with 360px horizontal separation (No overlap!)
-        { id: "m7_dha", stepNum: "07a", stage: "Statutory API", title: "DHA Connector", subtitle: "National Population Register (IDs, Passports, Visas)", secId: "sec-21", type: "connector", x: 60, y: 910, icon: "Landmark" },
-        { id: "m7_sars", stepNum: "07b", stage: "Statutory API", title: "SARS Connector", subtitle: "Tax PIN & Corporate Compliance Status", secId: "sec-22", type: "connector", x: 420, y: 910, icon: "DollarSign" },
-        { id: "m7_cipc", stepNum: "07c", stage: "Statutory API", title: "CIPC Connector", subtitle: "Company Registry, Directors & UBO Graph", secId: "sec-12", type: "connector", x: 780, y: 910, icon: "Briefcase" },
-        { id: "m7_other", stepNum: "07d", stage: "Statutory API", title: "SAQA / CIDB / Others", subtitle: "National Academic DB & Council Accreditations", secId: "sec-12", type: "connector", x: 1140, y: 910, icon: "Award" },
-        
-        // Verification & Processing Engines
-        { id: "m8", stepNum: "08", stage: "Stage 08", title: "Verification Engine", subtitle: "7-Stage Processing & Status Determination", secId: "sec-14", type: "process", x: 600, y: 1070, icon: "CheckCircle2" },
-        { id: "m9", stepNum: "09", stage: "Stage 09", title: "Trust & Risk Engine", subtitle: "Anomaly, Conflict & Expiry Analysis", secId: "sec-16", type: "engine", x: 600, y: 1190, icon: "AlertTriangle" },
-        { id: "m10", stepNum: "10", stage: "Stage 10", title: "Verified Digital Profile", subtitle: "Cryptographically Sealed Reusable Asset", secId: "sec-45", type: "verified", x: 600, y: 1310, icon: "BadgeCheck" },
-        { id: "m11", stepNum: "11", stage: "Stage 11", title: "Authorized Use & Sharing", subtitle: "Consent-Scoped Secure Data Reuse", secId: "sec-37", type: "process", x: 600, y: 1430, icon: "Share2" },
-        { id: "m12", stepNum: "12", stage: "Stage 12", title: "Continuous Monitoring", subtitle: "Background Time-Sensitive Watch", secId: "sec-18", type: "monitoring", x: 600, y: 1550, icon: "Activity" },
-        { id: "m13", stepNum: "13", stage: "Stage 13", title: "Automated Reverification", subtitle: "Scheduled Renewal & API Re-polling", secId: "sec-18", type: "reverification", x: 600, y: 1670, icon: "RefreshCw" },
-        { id: "m14", stepNum: "14", stage: "Stage 14", title: "Immutable Audit Log", subtitle: "6W+P Tamper-Resistant Ledger", secId: "sec-31", type: "audit", x: 600, y: 1790, icon: "Archive" }
+        { id: "m1", stepNum: "01", stage: "Stage 01", title: "Individual / Organization", subtitle: "Entity Onboarding & Digital Intake", secId: "sec-43", type: "start", x: 640, y: 40, icon: "Users" },
+        { id: "m2", stepNum: "02", stage: "Stage 02", title: "VettNet ID / VN Number", subtitle: "Unique Master Index Reference Key", secId: "sec-4", type: "process", x: 640, y: 210, icon: "Fingerprint" },
+        { id: "m3", stepNum: "03", stage: "Stage 03", title: "Identity Authentication", subtitle: "Level-1 Existence Verification", secId: "sec-19", type: "process", x: 640, y: 380, icon: "ShieldCheck" },
+        { id: "m4", stepNum: "04", stage: "Stage 04", title: "Consent & Purpose Layer", subtitle: "5-Point Gate & Attribute Scoping", secId: "sec-8", type: "gate", x: 640, y: 550, icon: "Lock" },
+        { id: "m5", stepNum: "05", stage: "Stage 05", title: "Profile Modules (15)", subtitle: "Modular Data Structures & Stores", secId: "sec-10", type: "subflow", x: 640, y: 720, icon: "Layers" },
+        { id: "m6", stepNum: "06", stage: "Stage 06", title: "Evidence Management", subtitle: "9-Field Provenance & Document Hashing", secId: "sec-11", type: "process", x: 640, y: 890, icon: "FileText" },
+        { id: "m7", stepNum: "07", stage: "Stage 07", title: "Gov & External API Gateway", subtitle: "Secure DMZ Connector Layer", secId: "sec-20", type: "gateway", x: 640, y: 1060, icon: "Cpu" },
+
+        { id: "m7_dha", stepNum: "07a", stage: "Statutory API", title: "DHA Connector", subtitle: "National Population Register (IDs, Passports, Visas)", secId: "sec-21", type: "connector", x: 40, y: 1260, icon: "Landmark" },
+        { id: "m7_sars", stepNum: "07b", stage: "Statutory API", title: "SARS Connector", subtitle: "Tax PIN & Corporate Compliance Status", secId: "sec-22", type: "connector", x: 440, y: 1260, icon: "DollarSign" },
+        { id: "m7_cipc", stepNum: "07c", stage: "Statutory API", title: "CIPC Connector", subtitle: "Company Registry, Directors & UBO Graph", secId: "sec-12", type: "connector", x: 840, y: 1260, icon: "Briefcase" },
+        { id: "m7_other", stepNum: "07d", stage: "Statutory API", title: "SAQA / CIDB / Others", subtitle: "National Academic DB & Council Accreditations", secId: "sec-12", type: "connector", x: 1240, y: 1260, icon: "Award" },
+
+        { id: "m8", stepNum: "08", stage: "Stage 08", title: "Verification Engine", subtitle: "7-Stage Processing & Status Determination", secId: "sec-14", type: "process", x: 640, y: 1480, icon: "CheckCircle2" },
+        { id: "m9", stepNum: "09", stage: "Stage 09", title: "Trust & Risk Engine", subtitle: "Anomaly, Conflict & Expiry Analysis", secId: "sec-16", type: "engine", x: 640, y: 1650, icon: "AlertTriangle" },
+        { id: "m10", stepNum: "10", stage: "Stage 10", title: "Verified Digital Profile", subtitle: "Cryptographically Sealed Reusable Asset", secId: "sec-45", type: "verified", x: 640, y: 1820, icon: "BadgeCheck" },
+        { id: "m11", stepNum: "11", stage: "Stage 11", title: "Authorized Use & Sharing", subtitle: "Consent-Scoped Secure Data Reuse", secId: "sec-37", type: "process", x: 640, y: 1990, icon: "Share2" },
+        { id: "m12", stepNum: "12", stage: "Stage 12", title: "Continuous Monitoring", subtitle: "Background Time-Sensitive Watch", secId: "sec-18", type: "monitoring", x: 640, y: 2160, icon: "Activity" },
+        { id: "m13", stepNum: "13", stage: "Stage 13", title: "Automated Reverification", subtitle: "Scheduled Renewal & API Re-polling", secId: "sec-18", type: "reverification", x: 640, y: 2330, icon: "RefreshCw" },
+        { id: "m14", stepNum: "14", stage: "Stage 14", title: "Immutable Audit Log", subtitle: "6W+P Tamper-Resistant Ledger", secId: "sec-31", type: "audit", x: 640, y: 2500, icon: "Archive" }
       ],
       connections: [
         { from: "m1", to: "m2", label: "Allocates VN" },
@@ -1489,8 +1486,7 @@ export const VETTNET_DATA = {
         { from: "m11", to: "m12", label: "Expiry Watch" },
         { from: "m12", to: "m13", label: "Triggers Re-check" },
         { from: "m13", to: "m8", label: "Reverify Loop", curve: "left-loop" },
-        { from: "m11", to: "m14", label: "6W+P Audit" },
-        { from: "m13", to: "m14", label: "Audit Event" }
+        { from: "m13", to: "m14", label: "6W+P Audit Ledger" }
       ]
     },
 
@@ -1499,17 +1495,17 @@ export const VETTNET_DATA = {
       title: "Individual Candidate Lifecycle Journey",
       subtitle: "11-Step Onboarding, Evidence Upload, Verification, and Credential Monitoring",
       nodes: [
-        { id: "ind_1", stepNum: "01", stage: "Step 01", title: "1. Individual Registration", subtitle: "Demographic Intake & Account Creation", secId: "sec-42", type: "start", x: 600, y: 40, icon: "UserPlus" },
-        { id: "ind_2", stepNum: "02", stage: "Step 02", title: "2. Identity Authentication", subtitle: "Level-1 Biometric / SA ID Match", secId: "sec-19", type: "process", x: 600, y: 160, icon: "ShieldCheck" },
-        { id: "ind_3", stepNum: "03", stage: "Step 03", title: "3. Universal VN ID Generated", subtitle: "Unique VN Number Assigned (VN-XXXXXX)", secId: "sec-4", type: "verified", x: 600, y: 280, icon: "Hash" },
-        { id: "ind_4", stepNum: "04", stage: "Step 04", title: "4. Add Profile Information", subtitle: "Academic, Professional, Family, Address", secId: "sec-5", type: "process", x: 600, y: 400, icon: "Edit3" },
-        { id: "ind_5", stepNum: "05", stage: "Step 05", title: "5. Upload Evidence", subtitle: "Degrees, Reference Letters, ID Docs", secId: "sec-11", type: "process", x: 600, y: 520, icon: "UploadCloud" },
-        { id: "ind_6", stepNum: "06", stage: "Step 06", title: "6. Verification Pipeline", subtitle: "API Checks & Officer Verification", secId: "sec-14", type: "gateway", x: 600, y: 640, icon: "CheckCircle2" },
-        { id: "ind_7", stepNum: "07", stage: "Step 07", title: "7. Trust & Risk Assessment", subtitle: "Conflict, Expiry & Duplicate Detection", secId: "sec-16", type: "engine", x: 600, y: 760, icon: "AlertTriangle" },
-        { id: "ind_8", stepNum: "08", stage: "Step 08", title: "8. Verified Digital Profile", subtitle: "Profile becomes Reusable Trust Asset", secId: "sec-45", type: "verified", x: 600, y: 880, icon: "BadgeCheck" },
-        { id: "ind_9", stepNum: "09", stage: "Step 09", title: "9. Consent-Based Sharing", subtitle: "Share Scoped Access with Employers/Orgs", secId: "sec-8", type: "process", x: 600, y: 1000, icon: "Share2" },
-        { id: "ind_10", stepNum: "10", stage: "Step 10", title: "10. Continuous Monitoring", subtitle: "Track Expiries (Licenses, Visas, Permits)", secId: "sec-18", type: "monitoring", x: 600, y: 1120, icon: "Activity" },
-        { id: "ind_11", stepNum: "11", stage: "Step 11", title: "11. Reverification", subtitle: "Scheduled or Triggered Re-Checks", secId: "sec-18", type: "reverification", x: 600, y: 1240, icon: "RefreshCw" }
+        { id: "ind_1", stepNum: "01", stage: "Step 01", title: "1. Individual Registration", subtitle: "Demographic Intake & Account Creation", secId: "sec-42", type: "start", x: 640, y: 40, icon: "UserPlus" },
+        { id: "ind_2", stepNum: "02", stage: "Step 02", title: "2. Identity Authentication", subtitle: "Level-1 Biometric / SA ID Match", secId: "sec-19", type: "process", x: 640, y: 210, icon: "ShieldCheck" },
+        { id: "ind_3", stepNum: "03", stage: "Step 03", title: "3. Universal VN ID Generated", subtitle: "Unique VN Number Assigned (VN-XXXXXX)", secId: "sec-4", type: "verified", x: 640, y: 380, icon: "Hash" },
+        { id: "ind_4", stepNum: "04", stage: "Step 04", title: "4. Add Profile Information", subtitle: "Academic, Professional, Family, Address", secId: "sec-5", type: "process", x: 640, y: 550, icon: "Edit3" },
+        { id: "ind_5", stepNum: "05", stage: "Step 05", title: "5. Upload Evidence", subtitle: "Degrees, Reference Letters, ID Docs", secId: "sec-11", type: "process", x: 640, y: 720, icon: "UploadCloud" },
+        { id: "ind_6", stepNum: "06", stage: "Step 06", title: "6. Verification Pipeline", subtitle: "API Checks & Officer Verification", secId: "sec-14", type: "gateway", x: 640, y: 890, icon: "CheckCircle2" },
+        { id: "ind_7", stepNum: "07", stage: "Step 07", title: "7. Trust & Risk Assessment", subtitle: "Conflict, Expiry & Duplicate Detection", secId: "sec-16", type: "engine", x: 640, y: 1060, icon: "AlertTriangle" },
+        { id: "ind_8", stepNum: "08", stage: "Step 08", title: "8. Verified Digital Profile", subtitle: "Profile becomes Reusable Trust Asset", secId: "sec-45", type: "verified", x: 640, y: 1230, icon: "BadgeCheck" },
+        { id: "ind_9", stepNum: "09", stage: "Step 09", title: "9. Consent-Based Sharing", subtitle: "Share Scoped Access with Employers/Orgs", secId: "sec-8", type: "process", x: 640, y: 1400, icon: "Share2" },
+        { id: "ind_10", stepNum: "10", stage: "Step 10", title: "10. Continuous Monitoring", subtitle: "Track Expiries (Licenses, Visas, Permits)", secId: "sec-18", type: "monitoring", x: 640, y: 1570, icon: "Activity" },
+        { id: "ind_11", stepNum: "11", stage: "Step 11", title: "11. Reverification", subtitle: "Scheduled or Triggered Re-Checks", secId: "sec-18", type: "reverification", x: 640, y: 1740, icon: "RefreshCw" }
       ],
       connections: [
         { from: "ind_1", to: "ind_2", label: "Credentials" },
@@ -1531,16 +1527,16 @@ export const VETTNET_DATA = {
       title: "Organization Onboarding & 6-Gate Search Flowchart",
       subtitle: "Corporate Vetting, SaaS Subscription Activation, and 6-Gate Candidate Lookup",
       nodes: [
-        { id: "corp_1", stepNum: "01", stage: "Step 01", title: "1. Register Organization", subtitle: "Company Name, CIPC Reg, Tax Number", secId: "sec-34", type: "start", x: 600, y: 40, icon: "Building" },
-        { id: "corp_2", stepNum: "02", stage: "Step 02", title: "2. Submit Documents", subtitle: "Cert of Incorporation, Tax PIN, Director IDs", secId: "sec-34", type: "process", x: 600, y: 160, icon: "FileText" },
-        { id: "corp_3", stepNum: "03", stage: "Step 03", title: "3. VettNet Review & Audit", subtitle: "Officer Review & CIPC/SARS Gateway Checks", secId: "sec-34", type: "process", x: 600, y: 280, icon: "Search" },
-        { id: "corp_4", stepNum: "04", stage: "Step 04", title: "4. Approval Decision Gate", subtitle: "Approve / Reject / Correction Required", secId: "sec-34", type: "gate", x: 600, y: 400, icon: "GitBranch" },
-        { id: "corp_5", stepNum: "05", stage: "Step 05", title: "5. Subscription Activation", subtitle: "Plan Tier, Seats, Search & Verification Quotas", secId: "sec-35", type: "process", x: 600, y: 520, icon: "CreditCard" },
-        { id: "corp_6", stepNum: "06", stage: "Step 06", title: "6. Provision Team Users", subtitle: "Org Admin -> HR Manager -> Recruitment Officer", secId: "sec-36", type: "process", x: 600, y: 640, icon: "Users" },
-        { id: "corp_7", stepNum: "07", stage: "Step 07", title: "7. Declare Purpose & Request Consent", subtitle: "e.g. Purpose: Employment Verification", secId: "sec-8", type: "gate", x: 600, y: 760, icon: "Target" },
-        { id: "corp_8", stepNum: "08", stage: "Step 08", title: "8. 6-Gate VettNet ID Search", subtitle: "Validate Org, Sub, Perms, Purpose, Consent, Scope", secId: "sec-37", type: "gateway", x: 600, y: 880, icon: "Filter" },
-        { id: "corp_9", stepNum: "09", stage: "Step 09", title: "9. Access Scoped Verified Data", subtitle: "Education, Employment, Licenses (Restricted Masked)", secId: "sec-8", type: "verified", x: 600, y: 1000, icon: "Eye" },
-        { id: "corp_10", stepNum: "10", stage: "Step 10", title: "10. Immutable Audit Entry", subtitle: "Logged with 6W+P Schema for Traceability", secId: "sec-31", type: "audit", x: 600, y: 1120, icon: "Archive" }
+        { id: "corp_1", stepNum: "01", stage: "Step 01", title: "1. Register Organization", subtitle: "Company Name, CIPC Reg, Tax Number", secId: "sec-34", type: "start", x: 640, y: 40, icon: "Building" },
+        { id: "corp_2", stepNum: "02", stage: "Step 02", title: "2. Submit Documents", subtitle: "Cert of Incorporation, Tax PIN, Director IDs", secId: "sec-34", type: "process", x: 640, y: 210, icon: "FileText" },
+        { id: "corp_3", stepNum: "03", stage: "Step 03", title: "3. VettNet Review & Audit", subtitle: "Officer Review & CIPC/SARS Gateway Checks", secId: "sec-34", type: "process", x: 640, y: 380, icon: "Search" },
+        { id: "corp_4", stepNum: "04", stage: "Step 04", title: "4. Approval Decision Gate", subtitle: "Approve / Reject / Correction Required", secId: "sec-34", type: "gate", x: 640, y: 550, icon: "GitBranch" },
+        { id: "corp_5", stepNum: "05", stage: "Step 05", title: "5. Subscription Activation", subtitle: "Plan Tier, Seats, Search & Verification Quotas", secId: "sec-35", type: "process", x: 640, y: 720, icon: "CreditCard" },
+        { id: "corp_6", stepNum: "06", stage: "Step 06", title: "6. Provision Team Users", subtitle: "Org Admin -> HR Manager -> Recruitment Officer", secId: "sec-36", type: "process", x: 640, y: 890, icon: "Users" },
+        { id: "corp_7", stepNum: "07", stage: "Step 07", title: "7. Purpose & Request Consent", subtitle: "e.g. Purpose: Employment Verification", secId: "sec-8", type: "gate", x: 640, y: 1060, icon: "Target" },
+        { id: "corp_8", stepNum: "08", stage: "Step 08", title: "8. 6-Gate VettNet ID Search", subtitle: "Validate Org, Sub, Perms, Purpose, Consent, Scope", secId: "sec-37", type: "gateway", x: 640, y: 1230, icon: "Filter" },
+        { id: "corp_9", stepNum: "09", stage: "Step 09", title: "9. Access Scoped Verified Data", subtitle: "Education, Employment, Licenses (Restricted Masked)", secId: "sec-8", type: "verified", x: 640, y: 1400, icon: "Eye" },
+        { id: "corp_10", stepNum: "10", stage: "Step 10", title: "10. Immutable Audit Entry", subtitle: "Logged with 6W+P Schema for Traceability", secId: "sec-31", type: "audit", x: 640, y: 1570, icon: "Archive" }
       ],
       connections: [
         { from: "corp_1", to: "corp_2", label: "Enter Info" },
@@ -1560,19 +1556,18 @@ export const VETTNET_DATA = {
       title: "Consent & Purpose Access Control Gateway Flowchart",
       subtitle: "5-Stage Pre-Access Interrogation and Scoped Data Masking Engine",
       nodes: [
-        { id: "cg_1", stepNum: "01", stage: "Step 01", title: "1. Organization Requests Access", subtitle: "Target VettNet ID: VN123456", secId: "sec-8", type: "start", x: 600, y: 40, icon: "Search" },
-        { id: "cg_2", stepNum: "02", stage: "Step 02", title: "2. Purpose Selection Gate", subtitle: "Q1 & Q2: Who is requesting? Why is it required?", secId: "sec-8", type: "gate", x: 600, y: 160, icon: "HelpCircle" },
-        { id: "cg_3", stepNum: "03", stage: "Step 03", title: "3. Authority & Consent Check", subtitle: "Q3: Does requester have valid consent token?", secId: "sec-8", type: "gate", x: 600, y: 280, icon: "Key" },
-        { id: "cg_4", stepNum: "04", stage: "Step 04", title: "4. Permission & Scoping Determination", subtitle: "Q4: What categories are authorized?", secId: "sec-8", type: "process", x: 600, y: 400, icon: "Sliders" },
-        { id: "cg_5", stepNum: "05", stage: "Step 05", title: "5. Time-To-Live (TTL) Verification", subtitle: "Q5: How long is permission valid?", secId: "sec-8", type: "gate", x: 600, y: 520, icon: "Clock" },
-        
-        // Branching Scoped Data Outputs (Spatially Separated)
-        { id: "cg_allowed", stepNum: "06a", stage: "Permitted Payload", title: "Approved Categories Exposed", subtitle: "Education, Employment, Certifications (Decrypted)", secId: "sec-8", type: "verified", x: 260, y: 660, icon: "CheckCircle2" },
-        { id: "cg_restricted", stepNum: "06b", stage: "Masked Payload", title: "Sensitive Categories Sealed", subtitle: "Family, Legal, Financial, Address (Redacted)", secId: "sec-8", type: "engine", x: 940, y: 660, icon: "Lock" },
-        
-        { id: "cg_6", stepNum: "06", stage: "Step 06", title: "6. Access Granted & Decrypted", subtitle: "Payload delivered to requester client", secId: "sec-9", type: "process", x: 600, y: 800, icon: "Unlock" },
-        { id: "cg_7", stepNum: "07", stage: "Step 07", title: "7. Audit Log Entry Committed", subtitle: "WHO, WHAT, RECORD, WHEN, PERM, PURPOSE", secId: "sec-31", type: "audit", x: 600, y: 920, icon: "Archive" },
-        { id: "cg_8", stepNum: "08", stage: "Step 08", title: "8. Permission Expires / Is Revoked", subtitle: "Access terminates upon TTL or User Revoke", secId: "sec-40", type: "reverification", x: 600, y: 1040, icon: "XCircle" }
+        { id: "cg_1", stepNum: "01", stage: "Step 01", title: "1. Org Requests Access", subtitle: "Target VettNet ID: VN123456", secId: "sec-8", type: "start", x: 640, y: 40, icon: "Search" },
+        { id: "cg_2", stepNum: "02", stage: "Step 02", title: "2. Purpose Selection Gate", subtitle: "Q1 & Q2: Who is requesting? Why is it required?", secId: "sec-8", type: "gate", x: 640, y: 210, icon: "HelpCircle" },
+        { id: "cg_3", stepNum: "03", stage: "Step 03", title: "3. Authority & Consent Check", subtitle: "Q3: Does requester have valid consent token?", secId: "sec-8", type: "gate", x: 640, y: 380, icon: "Key" },
+        { id: "cg_4", stepNum: "04", stage: "Step 04", title: "4. Permission & Scoping", subtitle: "Q4: What categories are authorized?", secId: "sec-8", type: "process", x: 640, y: 550, icon: "Sliders" },
+        { id: "cg_5", stepNum: "05", stage: "Step 05", title: "5. TTL Verification Gate", subtitle: "Q5: How long is permission valid?", secId: "sec-8", type: "gate", x: 640, y: 720, icon: "Clock" },
+
+        { id: "cg_allowed", stepNum: "06a", stage: "Permitted Scope", title: "Approved Categories Exposed", subtitle: "Education, Employment, Certifications (Decrypted)", secId: "sec-8", type: "verified", x: 200, y: 920, icon: "CheckCircle2" },
+        { id: "cg_restricted", stepNum: "06b", stage: "Masked Scope", title: "Sensitive Categories Sealed", subtitle: "Family, Legal, Financial, Address (Redacted)", secId: "sec-8", type: "engine", x: 1080, y: 920, icon: "Lock" },
+
+        { id: "cg_6", stepNum: "06", stage: "Step 06", title: "6. Access Granted & Delivered", subtitle: "Payload delivered to requester client", secId: "sec-9", type: "process", x: 640, y: 1140, icon: "Unlock" },
+        { id: "cg_7", stepNum: "07", stage: "Step 07", title: "7. Audit Log Committed", subtitle: "WHO, WHAT, RECORD, WHEN, PERM, PURPOSE", secId: "sec-31", type: "audit", x: 640, y: 1310, icon: "Archive" },
+        { id: "cg_8", stepNum: "08", stage: "Step 08", title: "8. Permission Expires / Revoked", subtitle: "Access terminates upon TTL or User Revoke", secId: "sec-40", type: "reverification", x: 640, y: 1480, icon: "XCircle" }
       ],
       connections: [
         { from: "cg_1", to: "cg_2", label: "Specifies VN" },
@@ -1593,18 +1588,18 @@ export const VETTNET_DATA = {
       title: "Verification Engine & Authoritative Sources Flowchart",
       subtitle: "Multi-Source Evidence Processing, 7-Tuple Record Generation, and 9-Status State Machine",
       nodes: [
-        { id: "ve_1", stepNum: "01", stage: "Step 01", title: "1. Information & Claim Submitted", subtitle: "e.g. BEng Degree, Tax PIN, SA ID Number", secId: "sec-14", type: "start", x: 600, y: 40, icon: "Inbox" },
-        { id: "ve_2", stepNum: "02", stage: "Step 02", title: "2. Evidence Collected & Hashed", subtitle: "9 Metadata Fields attached + SHA-256 Hash", secId: "sec-11", type: "process", x: 600, y: 160, icon: "FileText" },
-        { id: "ve_3", stepNum: "03", stage: "Step 03", title: "3. Source Identified & Routed", subtitle: "Selects DHA, SARS, CIPC, SAQA, CIDB or Manual Queue", secId: "sec-12", type: "gateway", x: 600, y: 280, icon: "Shuffle" },
-        
-        { id: "ve_api", stepNum: "03a", stage: "Tier 1 API", title: "Tier 1: Direct API Connector", subtitle: "Automated real-time statutory gateway handshake", secId: "sec-20", type: "connector", x: 260, y: 420, icon: "Zap" },
-        { id: "ve_manual", stepNum: "03b", stage: "Tier 2 Manual", title: "Tier 2: Authorized Review", subtitle: "Verification Officer inspects official register", secId: "sec-23", type: "process", x: 940, y: 420, icon: "UserCheck" },
-        
-        { id: "ve_4", stepNum: "04", stage: "Step 04", title: "4. Verification Executed", subtitle: "Checks What, Source, Method, Time, Verifier, Evidence", secId: "sec-13", type: "process", x: 600, y: 560, icon: "Cpu" },
-        { id: "ve_5", stepNum: "05", stage: "Step 05", title: "5. 7-Tuple Record Created", subtitle: "What, Source, Method, When, Who, Evidence, Reverification Date", secId: "sec-13", type: "verified", x: 600, y: 680, icon: "FileCheck" },
-        { id: "ve_6", stepNum: "06", stage: "Step 06", title: "6. Trust/Risk Assessment Handoff", subtitle: "Checks conflicts, duplicates, expiries, anomalies", secId: "sec-16", type: "engine", x: 600, y: 800, icon: "ShieldAlert" },
-        { id: "ve_7", stepNum: "07", stage: "Step 07", title: "7. Status Determination", subtitle: "Verified | Failed | Pending | Reverification Required | Suspended", secId: "sec-15", type: "gate", x: 600, y: 920, icon: "Tag" },
-        { id: "ve_8", stepNum: "08", stage: "Step 08", title: "8. Append to Historical Ledger", subtitle: "Immutable append-only record; no overwrite of history", secId: "sec-32", type: "audit", x: 600, y: 1040, icon: "Database" }
+        { id: "ve_1", stepNum: "01", stage: "Step 01", title: "1. Information & Claim Submitted", subtitle: "e.g. BEng Degree, Tax PIN, SA ID Number", secId: "sec-14", type: "start", x: 640, y: 40, icon: "Inbox" },
+        { id: "ve_2", stepNum: "02", stage: "Step 02", title: "2. Evidence Collected & Hashed", subtitle: "9 Metadata Fields attached + SHA-256 Hash", secId: "sec-11", type: "process", x: 640, y: 210, icon: "FileText" },
+        { id: "ve_3", stepNum: "03", stage: "Step 03", title: "3. Source Identified & Routed", subtitle: "Selects DHA, SARS, CIPC, SAQA, CIDB or Manual Queue", secId: "sec-12", type: "gateway", x: 640, y: 380, icon: "Shuffle" },
+
+        { id: "ve_api", stepNum: "03a", stage: "Tier 1 API", title: "Tier 1: Direct API Connector", subtitle: "Automated real-time statutory gateway handshake", secId: "sec-20", type: "connector", x: 200, y: 580, icon: "Zap" },
+        { id: "ve_manual", stepNum: "03b", stage: "Tier 2 Manual", title: "Tier 2: Authorized Review", subtitle: "Verification Officer inspects official register", secId: "sec-23", type: "process", x: 1080, y: 580, icon: "UserCheck" },
+
+        { id: "ve_4", stepNum: "04", stage: "Step 04", title: "4. Verification Executed", subtitle: "Checks What, Source, Method, Time, Verifier, Evidence", secId: "sec-13", type: "process", x: 640, y: 800, icon: "Cpu" },
+        { id: "ve_5", stepNum: "05", stage: "Step 05", title: "5. 7-Tuple Record Created", subtitle: "What, Source, Method, When, Who, Evidence, Reverification Date", secId: "sec-13", type: "verified", x: 640, y: 970, icon: "FileCheck" },
+        { id: "ve_6", stepNum: "06", stage: "Step 06", title: "6. Risk Assessment Handoff", subtitle: "Checks conflicts, duplicates, expiries, anomalies", secId: "sec-16", type: "engine", x: 640, y: 1140, icon: "ShieldAlert" },
+        { id: "ve_7", stepNum: "07", stage: "Step 07", title: "7. Status Determination", subtitle: "Verified | Failed | Pending | Reverification Required", secId: "sec-15", type: "gate", x: 640, y: 1310, icon: "Tag" },
+        { id: "ve_8", stepNum: "08", stage: "Step 08", title: "8. Append to Historical Ledger", subtitle: "Immutable append-only record; no overwrite of history", secId: "sec-32", type: "audit", x: 640, y: 1480, icon: "Database" }
       ],
       connections: [
         { from: "ve_1", to: "ve_2", label: "Upload Proof" },
@@ -1625,16 +1620,16 @@ export const VETTNET_DATA = {
       title: "RBAC & Staff Operations Workflow Flowchart",
       subtitle: "Super Admin Configuration, Custom Role Building, and 6-Point Override Auditing",
       nodes: [
-        { id: "rb_1", stepNum: "01", stage: "Step 01", title: "1. Super Admin Account", subtitle: "Root platform governance and master configuration", secId: "sec-27", type: "start", x: 600, y: 40, icon: "Shield" },
-        { id: "rb_2", stepNum: "02", stage: "Step 02", title: "2. Create Internal Staff", subtitle: "Provision individual operator accounts (no shared logins)", secId: "sec-28", type: "process", x: 600, y: 160, icon: "UserPlus" },
-        { id: "rb_3", stepNum: "03", stage: "Step 03", title: "3. Compose Role from 13 Perms", subtitle: "View, Search, Create, Edit, Verify, Approve, Override...", secId: "sec-29", type: "process", x: 600, y: 280, icon: "Sliders" },
-        { id: "rb_4", stepNum: "04", stage: "Step 04", title: "4. Assign Staff Role", subtitle: "Viewer | Officer | Manager | Senior Officer | Custom", secId: "sec-28", type: "gate", x: 600, y: 400, icon: "Award" },
-        { id: "rb_5", stepNum: "05", stage: "Step 05", title: "5. Staff Authenticates & Logs In", subtitle: "MFA & Session Governance", secId: "sec-42", type: "process", x: 600, y: 520, icon: "LogIn" },
-        { id: "rb_6", stepNum: "06", stage: "Step 06", title: "6. Access Assigned Work Queue", subtitle: "Application Manager dispatches batches to Officers", secId: "sec-38", type: "process", x: 600, y: 640, icon: "List" },
-        { id: "rb_7", stepNum: "07", stage: "Step 07", title: "7. Process & Adjudicate", subtitle: "Verify | Reject | Request Correction", secId: "sec-42", type: "gateway", x: 600, y: 760, icon: "CheckSquare" },
-        
-        { id: "rb_override", stepNum: "07a", stage: "Senior Escalation", title: "Senior Override Branch", subtitle: "Requires Reason, User ID, Timestamp, Evidence Attachment", secId: "sec-30", type: "engine", x: 960, y: 880, icon: "AlertOctagon" },
-        { id: "rb_8", stepNum: "08", stage: "Step 08", title: "8. Tamper-Proof Audit Commit", subtitle: "Logged with 6W+P schema (Actor, Action, Record, Time)", secId: "sec-31", type: "audit", x: 600, y: 1000, icon: "Archive" }
+        { id: "rb_1", stepNum: "01", stage: "Step 01", title: "1. Super Admin Account", subtitle: "Root platform governance and master configuration", secId: "sec-27", type: "start", x: 640, y: 40, icon: "Shield" },
+        { id: "rb_2", stepNum: "02", stage: "Step 02", title: "2. Create Internal Staff", subtitle: "Provision individual operator accounts (no shared logins)", secId: "sec-28", type: "process", x: 640, y: 210, icon: "UserPlus" },
+        { id: "rb_3", stepNum: "03", stage: "Step 03", title: "3. Compose Role from 13 Perms", subtitle: "View, Search, Create, Edit, Verify, Approve, Override...", secId: "sec-29", type: "process", x: 640, y: 380, icon: "Sliders" },
+        { id: "rb_4", stepNum: "04", stage: "Step 04", title: "4. Assign Staff Role", subtitle: "Viewer | Officer | Manager | Senior Officer | Custom", secId: "sec-28", type: "gate", x: 640, y: 550, icon: "Award" },
+        { id: "rb_5", stepNum: "05", stage: "Step 05", title: "5. Staff Authenticates & Logs In", subtitle: "MFA & Session Governance", secId: "sec-42", type: "process", x: 640, y: 720, icon: "LogIn" },
+        { id: "rb_6", stepNum: "06", stage: "Step 06", title: "6. Access Assigned Work Queue", subtitle: "Application Manager dispatches batches to Officers", secId: "sec-38", type: "process", x: 640, y: 890, icon: "List" },
+        { id: "rb_7", stepNum: "07", stage: "Step 07", title: "7. Process & Adjudicate", subtitle: "Verify | Reject | Request Correction", secId: "sec-42", type: "gateway", x: 640, y: 1060, icon: "CheckSquare" },
+
+        { id: "rb_override", stepNum: "07a", stage: "Senior Escalation", title: "Senior Override Branch", subtitle: "Requires Reason, User ID, Timestamp, Evidence Attachment", secId: "sec-30", type: "engine", x: 1080, y: 1060, icon: "AlertOctagon" },
+        { id: "rb_8", stepNum: "08", stage: "Step 08", title: "8. Tamper-Proof Audit Commit", subtitle: "Logged with 6W+P schema (Actor, Action, Record, Time)", secId: "sec-31", type: "audit", x: 640, y: 1260, icon: "Archive" }
       ],
       connections: [
         { from: "rb_1", to: "rb_2", label: "Provisions User" },
@@ -1650,4 +1645,3 @@ export const VETTNET_DATA = {
     }
   }
 };
-
