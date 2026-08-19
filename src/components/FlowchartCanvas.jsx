@@ -400,7 +400,8 @@ export default function FlowchartCanvas({
           <div
             className="canvas-transform-layer"
             style={{
-              transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoom})`
+              transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoom})`,
+              transition: isDragging ? 'none' : 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)'
             }}
           >
             {/* SVG Connector Lines */}

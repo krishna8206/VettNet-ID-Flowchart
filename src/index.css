@@ -73,6 +73,9 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: none;
 }
 
 #root {
@@ -80,6 +83,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  scroll-behavior: smooth;
 }
 
 /* Custom Scrollbars */
@@ -108,6 +112,7 @@ body {
   height: 100vh;
   overflow: hidden;
   background: #f8fafc;
+  scroll-behavior: smooth;
 }
 
 /* Single-Bar Header */
@@ -275,6 +280,13 @@ body {
   align-items: center;
   gap: 0.35rem;
   overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.pipeline-selector-inline::-webkit-scrollbar {
+  display: none;
 }
 
 .pipeline-btn {
@@ -657,6 +669,9 @@ body {
 .drawer-body {
   flex: 1;
   overflow-y: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -781,6 +796,9 @@ body {
 .doc-reader-view {
   flex: 1;
   overflow-y: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
   padding: 2rem 3rem;
   display: flex;
   flex-direction: column;
@@ -847,6 +865,9 @@ body {
 .modules-matrix-view {
   flex: 1;
   overflow-y: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
   padding: 2rem;
   display: flex;
   flex-direction: column;
