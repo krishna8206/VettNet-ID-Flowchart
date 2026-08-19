@@ -1,13 +1,12 @@
 import React from 'react';
 import { 
   ShieldCheck, GitGraph, BookOpen, 
-  Grid3X3, Download
+  Grid3X3
 } from 'lucide-react';
 
 export default function Navbar({ 
   activeTab, 
-  setActiveTab, 
-  onExport
+  setActiveTab
 }) {
   return (
     <header className="navbar-single">
@@ -48,19 +47,6 @@ export default function Navbar({
           30 Key Modules
         </button>
       </nav>
-
-      {/* Action Controls */}
-      <div className="nav-right-group">
-        <button 
-          className="nav-btn nav-btn-primary"
-          onClick={onExport}
-          title="Export Architecture Blueprint"
-          style={{ padding: '0.35rem 0.85rem', fontSize: '0.75rem', whiteSpace: 'nowrap' }}
-        >
-          <Download size={13} />
-          Export Blueprint
-        </button>
-      </div>
     </header>
   );
 }

@@ -48,7 +48,7 @@ export default function FlowchartCanvas({
   const centerInitialView = () => {
     if (!viewportRef.current) return;
     const vpW = viewportRef.current.clientWidth;
-    const targetX = vpW / 2 - (640 + CARD_WIDTH / 2) * 0.85;
+    const targetX = vpW / 2 - (600 + CARD_WIDTH / 2) * 0.85;
     setZoom(0.85);
     setPan({ x: targetX, y: 30 });
   };
@@ -134,10 +134,10 @@ export default function FlowchartCanvas({
       const toNode = nodeMap.get(conn.to);
       if (!fromNode || !toNode) return null;
 
-      const fromX = fromNode.x + CARD_WIDTH / 2;
-      const fromY = fromNode.y + CARD_HEIGHT;
-      const toX = toNode.x + CARD_WIDTH / 2;
-      const toY = toNode.y;
+      let fromX = fromNode.x + CARD_WIDTH / 2;
+      let fromY = fromNode.y + CARD_HEIGHT;
+      let toX = toNode.x + CARD_WIDTH / 2;
+      let toY = toNode.y;
 
       let pathD = '';
       let midX = (fromX + toX) / 2;
@@ -159,10 +159,30 @@ export default function FlowchartCanvas({
                  L ${endX} ${endY}`;
         midX = loopX;
         midY = (startY + endY) / 2;
+      } else if (Math.abs(fromNode.y - toNode.y) < 60 && fromNode.x < toNode.x) {
+        // Clean direct horizontal bridge line between side-by-side cards
+        const startX = fromNode.x + CARD_WIDTH;
+        const startY = fromNode.y + CARD_HEIGHT / 2;
+        const endX = toNode.x;
+        const endY = toNode.y + CARD_HEIGHT / 2;
+        pathD = `M ${startX} ${startY} L ${endX} ${endY}`;
+        midX = (startX + endX) / 2;
+        midY = (startY + endY) / 2;
       } else {
+        // Shoulder exit & entry points for branching and merging
+        if (fromNode.x < toNode.x) {
+          fromX = fromNode.x + CARD_WIDTH * 0.75;
+          toX = toNode.x + CARD_WIDTH * 0.25;
+        } else if (fromNode.x > toNode.x) {
+          fromX = fromNode.x + CARD_WIDTH * 0.25;
+          toX = toNode.x + CARD_WIDTH * 0.75;
+        }
+
         const deltaY = Math.abs(toY - fromY);
         const controlOffset = Math.max(deltaY * 0.5, 45);
         pathD = `M ${fromX} ${fromY} C ${fromX} ${fromY + controlOffset}, ${toX} ${toY - controlOffset}, ${toX} ${toY}`;
+        midX = (fromX + toX) / 2;
+        midY = (fromY + toY) / 2;
       }
 
       const isConnActive = selectedNodeId === conn.from || selectedNodeId === conn.to;

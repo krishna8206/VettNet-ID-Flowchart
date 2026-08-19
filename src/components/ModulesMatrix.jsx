@@ -7,18 +7,11 @@ export default function ModulesMatrix({
   onJumpToFlowchart 
 }) {
   const [filterCategory, setFilterCategory] = useState('ALL');
-  const [moduleSearch, setModuleSearch] = useState('');
 
   const categories = ['ALL', ...new Set(modules.map(m => m.category))];
 
   const filteredModules = modules.filter(m => {
-    const matchesCat = filterCategory === 'ALL' || m.category === filterCategory;
-    const matchesSearch = !moduleSearch || (
-      m.name.toLowerCase().includes(moduleSearch.toLowerCase()) ||
-      m.desc.toLowerCase().includes(moduleSearch.toLowerCase()) ||
-      m.category.toLowerCase().includes(moduleSearch.toLowerCase())
-    );
-    return matchesCat && matchesSearch;
+    return filterCategory === 'ALL' || m.category === filterCategory;
   });
 
   return (
@@ -31,7 +24,7 @@ export default function ModulesMatrix({
             <h1 style={{ fontSize: '1.5rem', fontWeight: 800, marginTop: '0.4rem' }}>
               30 Key Functional Modules Blueprint
             </h1>
-            <p style={{ color: '#94a3b8', fontSize: '0.85rem', marginTop: '0.2rem' }}>
+            <p style={{ color: '#475569', fontSize: '0.85rem', marginTop: '0.2rem' }}>
               Micro-modular functional systems comprising the complete VettNet ID Infrastructure
             </p>
           </div>
@@ -41,31 +34,18 @@ export default function ModulesMatrix({
           </div>
         </div>
 
-        {/* Search & Category Filter */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap', marginTop: '0.5rem' }}>
-          <div className="search-bar-container" style={{ maxWidth: '340px' }}>
-            <Search size={14} className="search-icon" />
-            <input
-              type="text"
-              className="search-input"
-              placeholder="Filter 30 modules..."
-              value={moduleSearch}
-              onChange={(e) => setModuleSearch(e.target.value)}
-            />
-          </div>
-
-          <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
-            {categories.map(cat => (
-              <button
-                key={cat}
-                className={`pipeline-btn ${filterCategory === cat ? 'active' : ''}`}
-                style={{ fontSize: '0.75rem', padding: '0.35rem 0.7rem' }}
-                onClick={() => setFilterCategory(cat)}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
+        {/* Category Filter Pills */}
+        <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', marginTop: '0.75rem' }}>
+          {categories.map(cat => (
+            <button
+              key={cat}
+              className={`pipeline-btn ${filterCategory === cat ? 'active' : ''}`}
+              style={{ fontSize: '0.75rem', padding: '0.35rem 0.75rem' }}
+              onClick={() => setFilterCategory(cat)}
+            >
+              {cat}
+            </button>
+          ))}
         </div>
       </div>
 

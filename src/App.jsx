@@ -69,50 +69,12 @@ export default function App() {
     });
   };
 
-  // Export Executive Client Architecture Blueprint
-  const handleExportSpec = () => {
-    const report = `# ${VETTNET_DATA.metadata.systemTitle}
-Version: ${VETTNET_DATA.metadata.version}
-Core Vision: ${VETTNET_DATA.metadata.coreVision}
-Brand Standard: ${VETTNET_DATA.metadata.brandStandard}
-
-Executive Overview:
-${VETTNET_DATA.metadata.executiveSummary}
-
-=======================================================
-8 CORE ARCHITECTURAL DOMAINS & 45 SPECIFICATIONS
-=======================================================
-${VETTNET_DATA.domains.map(d => `
-## ${d.title}
-${VETTNET_DATA.sections.filter(s => s.domainId === d.id || s.domain === d.title).map(s => `
-### [Spec ${s.number}] ${s.title}
-- Summary: ${s.summary}
-- Business Impact: ${s.businessValue || 'Enterprise trust & verification'}
-- Governance: ${(s.rulesAndStandards || s.keyRules || []).join('; ')}
-`).join('')}`).join('\n')}
-
-=======================================================
-30 KEY FUNCTIONAL PLATFORM MODULES
-=======================================================
-${VETTNET_DATA.keyModules.map(m => `M${m.id < 10 ? '0' + m.id : m.id}: ${m.name} (${m.category}) - ${m.desc}`).join('\n')}
-`;
-
-    const blob = new Blob([report], { type: 'text/markdown' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `VettNet_ID_Executive_Architecture_Blueprint.md`;
-    a.click();
-    URL.revokeObjectURL(url);
-  };
-
   return (
     <div className="app-container">
       {/* Top Single-Bar Navigation */}
       <Navbar 
         activeTab={activeTab}
         setActiveTab={setActiveTab}
-        onExport={handleExportSpec}
       />
 
       {/* Main Interactive Workspace Area */}
